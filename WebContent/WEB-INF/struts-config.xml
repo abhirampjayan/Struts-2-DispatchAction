@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="DispatchActionForm"
+			type="com.apj.forms.UserForm"></form-bean>
+	</form-beans>
+	<action-mappings>
+		<action path="/user" type="com.apj.actions.UserAction"
+			parameter="parameter" input="/index.jsp" name="DispatchActionForm"
+			scope="request" validate="false">
+			<forward name="add" path="/adduser.jsp"></forward>
+			<forward name="edit" path="/edituser.jsp"></forward>
+			<forward name="search" path="/searchuser.jsp"></forward>
+			<forward name="save" path="/saveuser.jsp"></forward>
+		</action>
+	</action-mappings>
+</struts-config>
